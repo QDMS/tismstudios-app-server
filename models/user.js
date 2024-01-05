@@ -46,12 +46,17 @@ const schema = new mongoose.Schema({
     unique: [true, "Email Already Exists"],
     validate: validator.isEmail,
   },
-password: {
-  type: String,
-  required: [true, "Please Enter Password"],
-  validate: passwordValidator,
-  select: false,
-},
+  phone: {
+    type: Number,
+    required: [true, "Please Enter Phone Number"],
+    unique: [true, "Phone Number Already Exists"],
+  },
+  password: {
+    type: String,
+    required: [true, "Please Enter Password"],
+    validate: passwordValidator,
+    select: false,
+  },
 
   address: {
     type: String,
@@ -85,7 +90,7 @@ password: {
 });
 
 schema.pre("save", async function (next) {
-  if(!this.isModified("password")) return next()
+  if (!this.isModified("password")) return next();
   this.password = await bcrypt.hash(this.password, 10);
 });
 
