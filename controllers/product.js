@@ -8,13 +8,15 @@ import cloudinary from "cloudinary";
 export const getAllProducts = asyncError(async (req, res, next) => {
   const { keyword, category } = req.query;
 
-  const products = await Product.find({
-    name: {
-      $regex: keyword ? keyword : "",
-      $options: "i",
-    },
-    category: category ? category : undefined,
-  });
+  const query = {
+    name: keyword ? { $regex: keyword, $options: "i" } : undefined,
+    category: category || undefined,
+  };
+
+  // Filter out undefined values from the query object
+  const finalQuery = Object.fromEntries(Object.entries(query).filter(([_, v]) => v !== undefined));
+
+  const products = await Product.find(finalQuery);
 
   res.status(200).json({
     success: true,
