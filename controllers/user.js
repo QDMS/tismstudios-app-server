@@ -95,7 +95,7 @@ export const updateImage = asyncError(async (req, res, next) => {
 
 	res.status(200).json({
 		success: true,
-		message: `${user.name}, Profile Avatar Image Updated Successfully`,
+		message: `${user.name}, Avatar Image Updated Successfully`,
 	});
 });
 
