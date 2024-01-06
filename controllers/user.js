@@ -54,7 +54,7 @@ export const register = asyncError(async (req, res, next) => {
 		zipCode,
 	});
 
-	sendToken(user, res, `Registration Successful, Thank You For Joining TismStudios ${user.name}`, 201);
+	sendToken(user, res, `Registration Successful ${user.name}, Thanks For Joining`, 201);
 });
 
 export const logOut = asyncError(async (req, res, next) => {
@@ -95,7 +95,7 @@ export const updateImage = asyncError(async (req, res, next) => {
 
 	res.status(200).json({
 		success: true,
-		message: `${user.name}, Your Profile Avatar Image Has Been Updated Successfully`,
+		message: `${user.name}'s, Profile Avatar Image Updated Successful`,
 	});
 });
 
@@ -116,7 +116,7 @@ export const updateProfile = asyncError(async (req, res, next) => {
 
 	res.status(200).json({
 		success: true,
-		message: `${user.name}, Your Profile Has Been Updated Successfully`,
+		message: `${user.name}'s, Profile Updated Successful`,
 	});
 });
 
@@ -136,7 +136,7 @@ export const changePassword = asyncError(async (req, res, next) => {
 
 	res.status(200).json({
 		success: true,
-		message: `${user.name}, Your Password Changed Successfully`,
+		message: `${user.name}, Your Password Changed Successful`,
 	});
 });
 
@@ -191,6 +191,6 @@ export const resetPassword = asyncError(async (req, res, next) => {
 
 	res.status(200).json({
 		success: true,
-		message: `${user.name}, Your password changed successfully, you can login in now.`,
+		message: `${user.name}'s, password changed successful, you can login in now.`,
 	});
 });
