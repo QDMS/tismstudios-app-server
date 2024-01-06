@@ -54,7 +54,7 @@ export const register = asyncError(async (req, res, next) => {
 		zipCode,
 	});
 
-	sendToken(user, res, `Registration Successful ${user.name}, Thanks For Joining`, 201);
+	sendToken(user, res, `Registration Successfully ${user.name}, Thanks For Joining`, 201);
 });
 
 export const logOut = asyncError(async (req, res, next) => {
@@ -95,7 +95,7 @@ export const updateImage = asyncError(async (req, res, next) => {
 
 	res.status(200).json({
 		success: true,
-		message: `${user.name}'s, Profile Avatar Image Updated Successful`,
+		message: `${user.name}'s, Profile Avatar Image Updated Successfully`,
 	});
 });
 
@@ -116,7 +116,7 @@ export const updateProfile = asyncError(async (req, res, next) => {
 
 	res.status(200).json({
 		success: true,
-		message: `${user.name}'s, Profile Updated Successful`,
+		message: `${user.name}'s, Profile Updated Successfully`,
 	});
 });
 
@@ -136,7 +136,7 @@ export const changePassword = asyncError(async (req, res, next) => {
 
 	res.status(200).json({
 		success: true,
-		message: `${user.name}, Your Password Changed Successful`,
+		message: `${user.name}, Your Password Changed Successfully`,
 	});
 });
 
