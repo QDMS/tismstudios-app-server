@@ -35,7 +35,7 @@ router
 
 router.post("/category", isAuthenticated, isAdmin, addCategory);
 
-router.get("/categories", isAuthenticated, isAdmin, getAllCategories);
+router.get("/categories", isAuthenticated, getAllCategories);
 
 router.delete("/category/:id", isAuthenticated, isAdmin, deleteCategory);
 
