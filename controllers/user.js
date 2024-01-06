@@ -65,7 +65,7 @@ export const logOut = asyncError(async (req, res, next) => {
 	});
 	res.status(200).json({
 		success: true,
-		message: 'Log Out Successful',
+		message: 'Log Out Successfully',
 	});
 });
 
@@ -95,7 +95,7 @@ export const updateImage = asyncError(async (req, res, next) => {
 
 	res.status(200).json({
 		success: true,
-		message: `${user.name}'s, Profile Avatar Image Updated Successfully`,
+		message: `${user.name}s, Profile Avatar Image Updated Successfully`,
 	});
 });
 
@@ -116,7 +116,7 @@ export const updateProfile = asyncError(async (req, res, next) => {
 
 	res.status(200).json({
 		success: true,
-		message: `${user.name}'s, Profile Updated Successfully`,
+		message: `${user.name}s, Profile Updated Successfully`,
 	});
 });
 
@@ -191,6 +191,6 @@ export const resetPassword = asyncError(async (req, res, next) => {
 
 	res.status(200).json({
 		success: true,
-		message: `${user.name}'s, password changed successful, you can login in now.`,
+		message: `${user.name}s, password changed successful, you can login in now.`,
 	});
 });
